@@ -63,7 +63,7 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "Name": {
+    "nombre": {
       "type": "text"
     },
     "no_cedula": {
@@ -71,6 +71,36 @@
     },
     "type_cedula": {
       "type": "string"
+    },
+    "primer_apellido": {
+      "type": "text"
+    },
+    "seg_apellido": {
+      "type": "text"
+    },
+    "fecha_expedition": {
+      "type": "date"
+    },
+    "lugar_expedition": {
+      "type": "string"
+    },
+    "genero": {
+      "type": "string"
+    },
+    "fecha_nacimiento": {
+      "type": "date"
+    },
+    "lugar_nascimiento": {
+      "type": "text"
+    },
+    "telefono": {
+      "type": "text"
+    },
+    "celular": {
+      "type": "text"
+    },
+    "tipo_vivienda": {
+      "type": "text"
     }
   }
 }
