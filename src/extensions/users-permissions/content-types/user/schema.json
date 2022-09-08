@@ -101,6 +101,12 @@
     },
     "tipo_vivienda": {
       "type": "text"
+    },
+    "actividad_economica": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::actividad-economica.actividad-economica",
+      "inversedBy": "user"
     }
   }
 }

@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "actividad_economicas",
+  "info": {
+    "singularName": "actividad-economica",
+    "pluralName": "actividad-economicas",
+    "displayName": "Actividad_Economica",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "actividad_principal": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "actividad_economica"
+    },
+    "nombre_empresa": {
+      "type": "text"
+    },
+    "actividad_empresa": {
+      "type": "text"
+    },
+    "direccion_empresa": {
+      "type": "text"
+    },
+    "nit": {
+      "type": "biginteger"
+    },
+    "telefono_empresa": {
+      "type": "text"
+    },
+    "ciudad_empresa": {
+      "type": "text"
+    },
+    "cargo_empresa": {
+      "type": "text"
+    },
+    "fecha_ingreso_emp": {
+      "type": "date"
+    },
+    "tipo_contrato": {
+      "type": "text"
+    },
+    "participacion_emp": {
+      "type": "boolean",
+      "default": false
+    },
+    "porcentaje_participacion": {
+      "type": "integer"
+    }
+  }
+}
