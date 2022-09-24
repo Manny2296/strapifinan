@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "referencias",
+  "info": {
+    "singularName": "referencia",
+    "pluralName": "referencias",
+    "displayName": "Referencia",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo_referencia": {
+      "type": "text"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "referencias"
+    },
+    "nombre_ref": {
+      "type": "text"
+    },
+    "parentesco_ref": {
+      "type": "text"
+    },
+    "telefono_ref": {
+      "type": "text"
+    },
+    "direccion_ref": {
+      "type": "text"
+    },
+    "ciudad_ref": {
+      "type": "text"
+    }
+  }
+}

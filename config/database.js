@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
       port: env.int('DATABASE_PORT', 5432),
       database: env('DATABASE_NAME', 'bank'),
       user: env('DATABASE_USERNAME', 'postgres'),
-      password: env('DATABASE_PASSWORD', '153420mpb'),
+      password: env('DATABASE_PASSWORD', '153420Mpb!'),
       schema: env('DATABASE_SCHEMA', 'public'), // Not required
     // ssl: {
       //  rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false),
