@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "creditos",
+  "info": {
+    "singularName": "credito",
+    "pluralName": "creditos",
+    "displayName": "Credito",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo_garantia": {
+      "type": "text"
+    },
+    "valor_prestamo": {
+      "type": "biginteger"
+    },
+    "cuotas_pagar": {
+      "type": "integer"
+    },
+    "tasa_mes_vcdo": {
+      "type": "float"
+    },
+    "fecha_apro": {
+      "type": "date"
+    },
+    "fecha_desembolso": {
+      "type": "date"
+    },
+    "soporte_garantia": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ciudad_credito": {
+      "type": "text"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "id_inversionista": {
+      "type": "biginteger"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "creditos"
+    }
+  }
+}

@@ -113,6 +113,12 @@
       "relation": "oneToMany",
       "target": "api::referencia.referencia",
       "mappedBy": "users_permissions_user"
+    },
+    "creditos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::credito.credito",
+      "mappedBy": "user"
     }
   }
 }
