@@ -55,6 +55,12 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "creditos"
+    },
+    "inversions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inversion.inversion",
+      "mappedBy": "credito"
     }
   }
 }

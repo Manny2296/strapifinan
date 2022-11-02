@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inversions",
+  "info": {
+    "singularName": "inversion",
+    "pluralName": "inversions",
+    "displayName": "Inversion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "credito": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::credito.credito",
+      "inversedBy": "inversions"
+    },
+    "porcentaje_participacion": {
+      "type": "integer"
+    },
+    "valor_inversion": {
+      "type": "biginteger"
+    }
+  }
+}
