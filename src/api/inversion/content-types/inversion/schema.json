@@ -4,12 +4,17 @@
   "info": {
     "singularName": "inversion",
     "pluralName": "inversions",
-    "displayName": "Inversion"
+    "displayName": "Inversion",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "users_permissions_user": {
       "type": "relation",
@@ -23,10 +28,20 @@
       "inversedBy": "inversions"
     },
     "porcentaje_participacion": {
-      "type": "integer"
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "valor_inversion": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
