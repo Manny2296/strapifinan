@@ -44,9 +44,6 @@
     "ciudad_credito": {
       "type": "text"
     },
-    "estado": {
-      "type": "string"
-    },
     "id_inversionista": {
       "type": "biginteger"
     },
@@ -64,7 +61,25 @@
     },
     "tasa_fi": {
       "type": "float",
-      "default": 0.05
+      "default": 0.5
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "Activo",
+        "Cancelado",
+        "Mora"
+      ],
+      "default": "Activo"
+    },
+    "pagos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pago.pago",
+      "mappedBy": "credito"
+    },
+    "tasa_plataforma": {
+      "type": "float"
     }
   }
 }

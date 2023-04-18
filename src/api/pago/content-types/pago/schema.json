@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pagos",
+  "info": {
+    "singularName": "pago",
+    "pluralName": "pagos",
+    "displayName": "pago"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "valor_pago": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true
+    },
+    "soporte_pago": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "fecha_pago": {
+      "type": "date"
+    },
+    "medio_pago": {
+      "type": "enumeration",
+      "enum": [
+        "PSE",
+        "Consignación Bancolombia",
+        "Transferencia Bancaria",
+        "Efectivo"
+      ]
+    },
+    "credito": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::credito.credito",
+      "inversedBy": "pagos"
+    }
+  }
+}
