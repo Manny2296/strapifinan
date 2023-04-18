@@ -110,6 +110,7 @@
     },
     "tasa_fi": {
       "type": "float",
+
       "default": 0.5,
       "pluginOptions": {
         "i18n": {
@@ -145,6 +146,7 @@
       },
       "type": "float",
       "default": 0.6
+
     }
   }
 }
