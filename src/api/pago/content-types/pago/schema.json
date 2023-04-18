@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pagos",
+  "info": {
+    "singularName": "pago",
+    "pluralName": "pagos",
+    "displayName": "Pago",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "valo_pago": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "soporte_pago": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "fecha_pago": {
+      "type": "date",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "medio_pago": {
+      "type": "enumeration",
+      "enum": [
+        "PSE",
+        "Consignación Bancolombia",
+        "Trasferencia Bancaria",
+        "Efectivo"
+      ],
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "credito": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::credito.credito",
+      "inversedBy": "pagos"
+    },
+    "giros": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::giro.giro",
+      "mappedBy": "pago"
+    }
+  }
+}
