@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "pagos",
+  "collectionName": "giros",
   "info": {
-    "singularName": "pago",
-    "pluralName": "pagos",
-    "displayName": "Pago",
+    "singularName": "giro",
+    "pluralName": "giros",
+    "displayName": "Giro",
     "description": ""
   },
   "options": {
@@ -16,9 +16,14 @@
     }
   },
   "attributes": {
-    "valo_pago": {
+    "pago": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pago.pago",
+      "inversedBy": "giros"
+    },
+    "Valor_giro": {
       "type": "biginteger",
-      "default": "0",
       "required": true,
       "pluginOptions": {
         "i18n": {
@@ -26,7 +31,7 @@
         }
       }
     },
-    "soporte_pago": {
+    "Soporte_giro": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -42,16 +47,43 @@
         }
       }
     },
-    "fecha_pago": {
-      "type": "date",
-      "required": true,
+    "fecha_giro": {
+      "type": "datetime",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "medio_pago": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "giros"
+    },
+    "Estado": {
+      "type": "enumeration",
+      "enum": [
+        "Solicitado",
+        "Pagado",
+        "En proceso"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Validacion": {
+      "type": "boolean",
+      "private": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "medio_giro": {
       "type": "enumeration",
       "enum": [
         "PSE",
@@ -59,24 +91,11 @@
         "Trasferencia Bancaria",
         "Efectivo"
       ],
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
-    },
-    "credito": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::credito.credito",
-      "inversedBy": "pagos"
-    },
-    "giros": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::giro.giro",
-      "mappedBy": "pago"
     }
   }
 }

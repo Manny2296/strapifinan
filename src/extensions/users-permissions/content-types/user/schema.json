@@ -120,6 +120,12 @@
       "target": "api::credito.credito",
       "mappedBy": "user"
     },
+    "giros": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::giro.giro",
+      "mappedBy": "users_permissions_user"
+    },
     "soporte_documento": {
       "allowedTypes": [
         "images",
